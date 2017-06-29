@@ -8,3 +8,5 @@ Docker container repo for a simple tomcat stack using jre6, tomcat7 and ojdbc dr
 # Running
 
     $ docker run -d -p 8080:8080 tomcat7-jre6-ojdbc
+
+Open http://localhost:8080/manager with user 'admin' and password 'admin'.
