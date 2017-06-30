@@ -12,4 +12,8 @@ if [[ ${CONTEXT_CONFIG} ]]; then
     sed -i -e "s#</Context>#$CONTEXT_CONFIG</Context>#g" /opt/tomcat7/conf/context.xml
 fi
 
+echo "Setting manager max limit from 50MB to 100MB just in case"
+
+sed -i -e "s/52428800/104857600/g" /opt/tomcat7/webapps/manager/WEB-INF/web.xml
+
 source /opt/tomcat7/bin/catalina.sh run
