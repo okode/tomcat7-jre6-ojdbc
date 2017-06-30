@@ -8,7 +8,7 @@ if [[ ${MANAGER_PASSWORD} ]]; then
     sed -i -e "s/password=\"admin\"/password=\"$MANAGER_PASSWORD\"/g" /opt/tomcat7/conf/tomcat-users.xml
 fi
 if [[ ${CONTEXT_CONFIG} ]]; then
-    echo "Context file configuration detected, setting it to $CONTEXT_CONFIG"
+    echo "Context file configuration detected, setting it"
     sed -i -e "s#</Context>#$CONTEXT_CONFIG</Context>#g" /opt/tomcat7/conf/context.xml
 fi
 
