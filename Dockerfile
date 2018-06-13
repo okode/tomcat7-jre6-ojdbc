@@ -9,6 +9,8 @@ COPY tomcat-users.xml /opt/tomcat7/conf/
 COPY run.sh /opt/tomcat7/bin/
 RUN sed -i.bak 's/HTTP\/1\.1"/HTTP\/1\.1" URIEncoding="UTF-8"/g' /opt/tomcat7/conf/server.xml
 
+VOLUME /certs
+
 EXPOSE 8080
 
 CMD ["/opt/tomcat7/bin/run.sh"]
