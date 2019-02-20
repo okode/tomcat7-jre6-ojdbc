@@ -27,7 +27,7 @@ sed -i -e "s/52428800/104857600/g" /opt/tomcat7/webapps/manager/WEB-INF/web.xml
 echo "Installing additional certs"
 
 for filename in /certs/*.cer; do
-    keytool -import -trustcacerts -file "$filename" -keystore /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/security/cacerts -storepass changeit -noprompt
+    keytool -import -trustcacerts -file "$filename" -alias "$filename" -keystore /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/security/cacerts -storepass changeit -noprompt
 done
 
 source /opt/tomcat7/bin/catalina.sh run
