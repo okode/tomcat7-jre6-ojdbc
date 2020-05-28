@@ -23,6 +23,7 @@ fi
 echo "Setting manager max limit from 50MB to 100MB just in case"
 
 sed -i -e "s/52428800/104857600/g" /opt/tomcat7/webapps/manager/WEB-INF/web.xml
+sed -i -e "s/#crypto.policy=unlimited/crypto.policy=unlimited/" /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/security/java.security
 
 echo "Installing additional certs"
 
